@@ -52,13 +52,13 @@ public class PacoteControllerImpTest {
 
     @BeforeEach
     public void init() {
-       pacotes = Pacotes.builder().nome("teste").tipo("teste").descricao("teste").build();
+       pacotes = Pacotes.builder().nome("São Paulo").tipo("Viagem de avião").descricao("Viagem de avião com tudo pago").build();
     }
 
 
     @Test
     public void findAllPack() throws Exception {
-        List<Pacotes> pacotesList = new ArrayList<>();
+        List<Pacotes> pacotesList = new ArrayList<>();  
         when(pacoteRepository.findAll()).thenReturn(pacotesList);
 
         ResultActions resultActions = mockMvc.perform(get("/api/pacotes")
