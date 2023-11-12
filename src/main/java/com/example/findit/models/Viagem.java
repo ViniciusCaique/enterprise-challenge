@@ -45,7 +45,7 @@ public class Viagem {
         return EntityModel.of(
             this,
             linkTo(methodOn(ViagemController.class).show(id)).withSelfRel(),
-            linkTo(methodOn(ViagemController.class).index(null, Pageable.unpaged())).withRel("all"),
+//            linkTo(methodOn(ViagemController.class).index(null, Pageable.unpaged())).withRel("all"),
             linkTo(methodOn(ViagemController.class).show(id)).withRel("destroy")
         );
     }

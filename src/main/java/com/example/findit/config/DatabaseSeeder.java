@@ -73,8 +73,8 @@ public class DatabaseSeeder implements CommandLineRunner {
             ));
 
         viagemRepository.saveAll(List.of(
-            Viagem.builder().descricao("Viagem para o Rio de Janeiro").dataPartida(LocalDate.now()).dataFim(LocalDate.now()).destino(d1).usuario(u1).build(),
-            Viagem.builder().descricao("Viagem para São Paulo").dataPartida(LocalDate.now()).dataFim(LocalDate.now()).destino(d1).usuario(u1).build()
+            Viagem.builder().descricao("Viagem para o Rio de Janeiro").dataPartida(LocalDate.now()).dataFim(LocalDate.now().plusDays(5)).destino(d1).usuario(u1).build(),
+            Viagem.builder().descricao("Viagem para São Paulo").dataPartida(LocalDate.now()).dataFim(LocalDate.now().plusDays(5)).destino(d1).usuario(u1).build()
 
         ));
 

@@ -1,5 +1,7 @@
 package com.example.findit.controllers;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,19 +50,24 @@ public class PacoteController {
     @Autowired
     PagedResourcesAssembler<Object> assembler;
 
-    @GetMapping
-    @Operation(
-        summary = "Detalhar Pacotes.",
-        description = "" 
-    )
-    @ApiResponses({
-        @ApiResponse(responseCode = "200", description = ""),
-        @ApiResponse(responseCode = "404", description = "")
-    })
-    public PagedModel<EntityModel<Object>> index(@RequestParam(required = false) String busca, @PageableDefault(size = 10) Pageable pageable){
-        Page<Pacotes> pacote = pacoteRepository.findAll(pageable);
+    // @GetMapping
+    // @Operation(
+    //     summary = "Detalhar Pacotes.",
+    //     description = "" 
+    // )
+    // @ApiResponses({
+    //     @ApiResponse(responseCode = "200", description = ""),
+    //     @ApiResponse(responseCode = "404", description = "")
+    // })
+    // public PagedModel<EntityModel<Object>> index(@RequestParam(required = false) String busca, @PageableDefault(size = 10) Pageable pageable){
+    //     Page<Pacotes> pacote = pacoteRepository.findAll(pageable);
 
-        return assembler.toModel(pacote.map(Pacotes::toEntityModel));
+    //     return assembler.toModel(pacote.map(Pacotes::toEntityModel));
+    // }
+
+    @GetMapping
+    public List<Pacotes> index(){
+        return pacoteRepository.findAll();
     }
 
     @PostMapping

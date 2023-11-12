@@ -49,8 +49,9 @@ public class Pacotes {
         return EntityModel.of(
             this,
             linkTo(methodOn(PacoteController.class).show(id)).withSelfRel(),
-            linkTo(methodOn(PacoteController.class).index(null, Pageable.unpaged())).withRel("all"),
+//            linkTo(methodOn(PacoteController.class).index(null, Pageable.unpaged())).withRel("all"),
             linkTo(methodOn(PacoteController.class).show(id)).withRel("destroy")
         );
     }
+
 }
